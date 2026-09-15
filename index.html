@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>ചിത്രശലഭങ്ങൾ | യൂണിറ്റ് 4 പാഠം 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Malayalam',sans-serif;background:#fdf1f6;background-image:radial-gradient(circle at 10% 10%,#fbe4ee 0%,transparent 40%),radial-gradient(circle at 90% 90%,#e3f3ee 0%,transparent 40%);color:#233;min-height:100vh;overflow-x:hidden;word-wrap:break-word}
+.app{max-width:760px;margin:0 auto;min-height:100vh;background:#fffdf9;box-shadow:0 0 30px rgba(0,0,0,.08);overflow-x:hidden;padding-bottom:30px}
+.screen{display:none;padding:14px 14px 26px;animation:fadeIn .28s ease;overflow-x:hidden}
+.screen.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hero{background:linear-gradient(135deg,#a3195b 0%,#d94f8c 55%,#2f8f7a 100%);color:#fff;border-radius:18px;padding:22px 18px 20px;margin:12px 4px 18px;box-shadow:0 8px 20px rgba(163,25,91,.25);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;background:rgba(255,255,255,.08);border-radius:50%}
+.hero-unit{font-size:.8rem;letter-spacing:.04em;color:#ffe3ef;font-weight:600}
+.hero h1{font-size:1.25rem;margin:6px 0 4px;font-weight:800;line-height:1.3}
+.prep-badge{display:inline-block;margin-top:8px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.5);color:#fff;font-weight:700;font-size:.78rem;padding:6px 14px;border-radius:20px}
+.progress-wrap{margin-top:14px;background:rgba(255,255,255,.18);border-radius:20px;height:10px;overflow:hidden}
+.progress-bar{height:100%;background:#ffd15c;width:0%;transition:width .4s;border-radius:20px}
+.progress-text{font-size:.72rem;margin-top:6px;color:#fff0f6}
+.sec-title{font-size:1.02rem;font-weight:800;color:#a3195b;margin:22px 4px 10px;display:flex;align-items:center;gap:8px;border-bottom:3px solid #ffd15c;padding-bottom:6px}
+.sec-num{background:#a3195b;color:#fff;width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.sec-desc{font-size:.78rem;color:#665;margin:0 4px 10px;line-height:1.5}
+.btn-list{display:flex;flex-direction:column;gap:10px;margin-bottom:6px}
+.act-btn{width:100%;text-align:left;border:none;border-radius:14px;padding:13px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;color:#fff;font-family:inherit;font-size:.92rem;font-weight:700;line-height:1.35;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.act-btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.act-icon{font-size:1.35rem;flex-shrink:0;width:30px;text-align:center}
+.act-check{margin-left:auto;font-size:1rem;flex-shrink:0;opacity:.85}
+.c1{background:#c0396f}.c2{background:#2f8f7a}.c3{background:#3a6bb0}.c4{background:#b5702e}.c5{background:#7a4bb0}
+.topbar{display:flex;align-items:center;gap:8px;background:#a3195b;color:#fff;padding:12px 12px;border-radius:14px;margin-bottom:16px;position:sticky;top:8px;z-index:20;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+.topbar h2{font-size:.95rem;margin:0;flex:1;font-weight:800;line-height:1.3}
+.icon-btn{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:1.05rem;padding:6px 12px;border-radius:9px;cursor:pointer;flex-shrink:0}
+.card{background:#fff;border:1.5px solid #f0dbe6;border-radius:14px;padding:14px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.readbox{background:#fdf3f8;border-left:4px solid #d94f8c;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:.88rem;line-height:1.7;color:#3a2530}
+.tip{background:#eaf7f2;border-left:4px solid #2f8f7a;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:.83rem;color:#134531;line-height:1.55}
+.qtext{font-weight:700;color:#a3195b;margin-bottom:10px;font-size:.9rem;line-height:1.55}
+textarea{width:100%;min-height:110px;border:2px solid #ecd7e0;border-radius:10px;padding:10px;font-family:inherit;font-size:.87rem;line-height:1.6;resize:vertical}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn{border:none;border-radius:9px;padding:9px 16px;font-weight:700;font-size:.83rem;cursor:pointer;color:#fff;box-shadow:0 3px 0 rgba(0,0,0,.15);font-family:inherit}
+.btn:active{transform:translateY(2px);box-shadow:none}
+.btn-save{background:#2f8f7a}.btn-hint{background:#b5702e}.btn-check{background:#3a6bb0}
+.status-msg{font-size:.78rem;margin-top:8px;font-weight:700;min-height:18px}.status-ok{color:#2f8f7a}
+.quiz-opt{display:block;width:100%;text-align:right;background:#faf3f6;border:2px solid #f0dbe6;border-radius:10px;padding:11px 12px;margin-bottom:9px;cursor:pointer;font-size:.87rem;font-weight:600;color:#233;font-family:inherit}
+.quiz-opt.correct{background:#d7f3e3;border-color:#2f8f7a;color:#0d4a34}.quiz-opt.wrong{background:#fbdada;border-color:#c0463f;color:#7a1d17}.quiz-opt.disabled{pointer-events:none}
+.quiz-progress{font-size:.78rem;color:#a78;margin-bottom:6px;font-weight:700}
+.explain{font-size:.8rem;background:#eef7f0;border-radius:8px;padding:8px 10px;margin-top:6px;color:#164;display:none;line-height:1.55}.explain.show{display:block}
+.score-box{text-align:center;padding:20px 10px}.score-box .big{font-size:2.4rem;font-weight:800;color:#a3195b}
+.check-item{display:flex;align-items:flex-start;gap:10px;background:#faf6f0;border-radius:10px;padding:10px 12px;margin-bottom:8px;cursor:pointer;border:2px solid transparent}
+.check-item.done{background:#e6f6ec;border-color:#2f8f7a}
+.check-box{width:22px;height:22px;border-radius:6px;border:2px solid #999;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:transparent;margin-top:1px}
+.check-item.done .check-box{background:#2f8f7a;border-color:#2f8f7a;color:#fff}
+.check-item span.txt{font-size:.85rem;line-height:1.5}
+.match-wrap{display:flex;gap:10px}.match-col{flex:1;display:flex;flex-direction:column;gap:8px}
+.match-item{padding:10px 8px;background:#faf3f6;border:2px solid #f0dbe6;border-radius:9px;text-align:center;font-size:.8rem;font-weight:700;cursor:pointer}
+.match-item.sel{background:#cfe6ff;border-color:#3a6bb0}.match-item.done{background:#d7f3e3;border-color:#2f8f7a;color:#0d4a34;cursor:default}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#a3195b;color:#fff;padding:11px 22px;border-radius:10px;font-weight:700;font-size:.85rem;z-index:999;opacity:0;pointer-events:none;transition:opacity .25s;max-width:88%;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,.2)}
+.toast.show{opacity:1}
+.footer-note{text-align:center;font-size:.72rem;color:#a87;margin-top:24px;padding:0 10px}
+.qp-item{background:#fff;border:1.5px solid #f0dbe6;border-radius:12px;padding:12px 13px;margin-bottom:12px}
+.qp-q{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.qp-q-text{font-weight:700;font-size:.87rem;color:#233;line-height:1.55;flex:1}
+.marks-badge{background:#a3195b;color:#fff;font-size:.68rem;padding:3px 9px;border-radius:20px;flex-shrink:0;white-space:nowrap;font-weight:700}
+.btn-toggle{background:#b5702e;color:#fff;border:none;padding:7px 14px;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:9px;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.ans-box{background:#eef7f0;border-left:4px solid #2f8f7a;border-radius:8px;padding:10px 12px;font-size:.83rem;line-height:1.65;color:#164;margin-top:9px;display:none}.ans-box.show{display:block}
+.print-paper{background:#fff;border:1.5px solid #ecdccb;border-radius:10px;padding:16px}
+.print-header{text-align:center;margin-bottom:10px;border-bottom:2px solid #a3195b;padding-bottom:10px}
+.print-header .sch{font-size:.75rem;color:#987}.print-header h3{margin:4px 0;color:#a3195b;font-size:1.05rem}
+.print-meta{display:flex;justify-content:space-between;font-size:.78rem;margin:10px 0;color:#345;flex-wrap:wrap;gap:6px}
+.print-instr{font-size:.76rem;background:#fdf3f8;border-radius:8px;padding:8px 10px;margin-bottom:12px;color:#654;line-height:1.6}
+.qsection-title{font-weight:800;color:#a3195b;margin:16px 0 8px;font-size:.86rem;border-bottom:1.5px dashed #ccc;padding-bottom:4px}
+.qp-line{margin-bottom:9px;font-size:.83rem;line-height:1.6}
+.pdf-btn-row{text-align:center;margin:14px 0 4px}
+.btn-pdf{background:#c0463f;color:#fff;border:none;padding:11px 22px;border-radius:10px;font-weight:800;font-size:.88rem;cursor:pointer;font-family:inherit;box-shadow:0 4px 0 #8f312c;transition:transform 0.1s;}
+.btn-pdf:active{transform:translateY(2px);box-shadow:none !important;}
+@media print{.no-print{display:none!important}}
+@media(max-width:420px){.hero h1{font-size:1.15rem}.act-btn{font-size:.86rem;padding:12px}}
+
+/* Zoom controls and anti-overflow settings added */
+.zoom-controls{position:fixed;bottom:20px;right:12px;z-index:900;display:flex;flex-direction:column;gap:6px}
+.zoom-btn{width:44px;height:44px;border-radius:50%;border:none;background:#a3195b;color:#fff;font-size:1.4rem;font-weight:bold;box-shadow:0 3px 8px rgba(0,0,0,.25);cursor:pointer}
+.app, .screen, .card, .readbox, p, h1, h2, h3, .act-btn, span, div, textarea {
+    max-width:100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- Zoom Controls -->
+<div class="zoom-controls no-print">
+  <button class="zoom-btn" onclick="adjustZoom(0.1)">+</button>
+  <button class="zoom-btn" onclick="resetZoom()" style="font-size:0.9rem">1x</button>
+  <button class="zoom-btn" onclick="adjustZoom(-0.1)">−</button>
+</div>
+
+<div id="home" class="screen active">
+  <div class="hero">
+    <div class="hero-unit">മലയാളം · കേരളപാഠാവലി 7 · യൂണിറ്റ് 4 · പാഠം 2</div>
+    <h1>ചിത്രശലഭങ്ങൾ</h1>
+    <div style="font-size:.82rem;opacity:.95;margin-top:2px">കവിത · എസ്. ജോസഫ്</div>
+    <div class="prep-badge">✨ Prepared by : Smart Vidhya</div>
+    <div class="progress-wrap"><div class="progress-bar" id="progBar"></div></div>
+    <div class="progress-text" id="progText">0 / 14 പ്രവർത്തനങ്ങൾ പൂർത്തിയായി</div>
+  </div>
+
+  <div class="sec-title"><span class="sec-num">📖</span> പാഠം വായിക്കുക</div>
+  <p class="sec-desc">ടെക്സ്റ്റ് ബുക്കിലെ പ്രധാന ഭാഗങ്ങൾ – വായിക്കുകയോ കേൾക്കുകയോ ചെയ്യാം.</p>
+  <div class="btn-list">
+    <button class="act-btn" onclick="openScreen('read')" style="background:linear-gradient(135deg,#5C6BC0,#3949AB)"><span class="act-icon">📖</span>പാഠം വായിക്കുക<span class="act-check" id="chk-read"></span></button>
+  </div>
+
+  <div class="sec-title"><span class="sec-num">1</span> കവിതയുടെ ആശയം</div>
+  <p class="sec-desc">ചിത്രശലഭങ്ങൾ – ആശയാവിഷ്കാരം.</p>
+  <div class="btn-list">
+    <button class="act-btn c1" onclick="openScreen('a1')"><span class="act-icon">🖼️</span>കവിത വായന – ചിത്രശലഭങ്ങൾ<span class="act-check" id="chk-a1"></span></button>
+    <button class="act-btn c1" onclick="openScreen('a2')"><span class="act-icon">📖</span>കണ്ടെത്താം പറയാം<span class="act-check" id="chk-a2"></span></button>
+    <button class="act-btn c1" onclick="openScreen('a3')"><span class="act-icon">💬</span>ചർച്ചചെയ്യാം എഴുതാം – ആശയം<span class="act-check" id="chk-a3"></span></button>
+  </div>
+
+  <div class="sec-title"><span class="sec-num">2</span> തിയേറ്റർ സ്കെച്ച്</div>
+  <p class="sec-desc">മനസ്സിലെ കിളി – നാടകം.</p>
+  <div class="btn-list">
+    <button class="act-btn c2" onclick="openScreen('b1')"><span class="act-icon">🎨</span>തിയേറ്റർ സ്കെച്ച് തയ്യാറാക്കുക<span class="act-check" id="chk-b1"></span></button>
+    <button class="act-btn c2" onclick="openScreen('b2')"><span class="act-icon">✉️</span>നാടക സംഭാഷണം<span class="act-check" id="chk-b2"></span></button>
+  </div>
+
+  <div class="sec-title"><span class="sec-num">3</span> പ്രവർത്തനങ്ങൾ</div>
+  <div class="btn-list">
+    <button class="act-btn c3" onclick="openScreen('c1')"><span class="act-icon">🎤</span>കവിതയിലെ ഉപമകൾ<span class="act-check" id="chk-c1"></span></button>
+    <button class="act-btn c3" onclick="openScreen('c2')"><span class="act-icon">📰</span>കവിത അപഗ്രഥനം<span class="act-check" id="chk-c2"></span></button>
+    <button class="act-btn c3" onclick="openScreen('c3')"><span class="act-icon">✍️</span>ലേഖനം – ബാല്യകാലം ചിത്രശലഭങ്ങൾ പോലെ<span class="act-check" id="chk-c3"></span></button>
+  </div>
+
+  <div class="sec-title"><span class="sec-num">4</span> പരീക്ഷാ കോർണർ</div>
+  <div class="btn-list">
+    <button class="act-btn c5" onclick="openScreen('e1')"><span class="act-icon">🏆</span>മെഗാ ക്വിസ്<span class="act-check" id="chk-e1"></span></button>
+    <button class="act-btn c5" onclick="openScreen('e2')"><span class="act-icon">✔️</span>ശരി / തെറ്റ്<span class="act-check" id="chk-e2"></span></button>
+    <button class="act-btn c5" onclick="openScreen('e3')"><span class="act-icon">🔀</span>യോജിപ്പിക്കുക<span class="act-check" id="chk-e3"></span></button>
+    <button class="act-btn c5" onclick="openScreen('e4')"><span class="act-icon">📋</span>മോഡൽ ചോദ്യപേപ്പർ<span class="act-check" id="chk-e4"></span></button>
+    <button class="act-btn c5" onclick="openScreen('e5')"><span class="act-icon">📄</span>യൂണിറ്റ് ടെസ്റ്റ്<span class="act-check" id="chk-e5"></span></button>
+  </div>
+  <div class="footer-note">നിങ്ങളുടെ ഉത്തരങ്ങൾ ഈ ബ്രൗസറിൽ സേവ് ചെയ്യപ്പെടും.</div>
+</div>
+
+<!-- READ -->
+<div id="read" class="screen">
+  <div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>പാഠം വായിക്കുക</h2></div>
+  <div class="card">
+    <div class="btn-row" style="margin-bottom:12px">
+      <button class="btn btn-check" id="btnReadAloud" onclick="toggleReadAloud()">🔊 മുഴുവൻ വായിക്കുക</button>
+      <button class="btn btn-hint" onclick="stopReadAloud()">⏹ നിർത്തുക</button>
+    </div>
+    <div id="lessonText" class="readbox" style="max-height:65vh;overflow-y:auto;line-height:1.75;font-size:.9rem">
+      <h3 style="color:#a3195b;margin-bottom:12px">കാൽവിരലിൽ വിരിയും കവിത – പ്രധാന ഭാഗങ്ങൾ</h3>
+      <div class="para-block" style="margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed #ecd7e0">
+        <p id="p1"><strong>ക്രിസ്റ്റി ബ്രൗണിന്റെ ആത്മകഥ</strong><br>
+        അന്നുവരെ ഞാൻ എന്റെ ശരീരഭാഗങ്ങളെക്കുറിച്ച് ചിന്തിച്ചിരുന്നുവോ! ഇല്ല. എന്റെ ഇടതുകാലിനെക്കുറിച്ചല്ലാതെ, അതിന്റെ വിരലുകളിൽ പിടിപ്പിച്ച ബ്രഷും പെൻസിലുമൊക്കെക്കൊണ്ട് വരയ്ക്കുന്ന ചിത്രങ്ങളെക്കുറിച്ചല്ലാതെ. അതും ചില ലാൻഡ്‌സ്‌കേപ്പുകൾ മാത്രം.</p>
+        <button id="btn-p1" class="btn btn-check" style="padding:6px 12px;font-size:.78rem;margin-top:6px" onclick="readPara('p1')">🔊 വായിക്കുക</button>
+      </div>
+      <div class="para-block" style="margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed #ecd7e0">
+        <p id="p2"><strong>ഡെലാഹണ്ടിന്റെ പ്രോത്സാഹനം</strong><br>
+        അവൾ, ഡെലാഹണ്ട്, എന്റെ കൂട്ടുകാരിയായെത്തിയപ്പോൾ, എന്റെ ചിത്രങ്ങളെ പുകഴ്ത്തിപ്പറഞ്ഞപ്പോൾ, അതിന്റെ ഓരോ വിശദാംശത്തെയും മാസ്റ്റർപീസുകളാക്കി എണ്ണിയപ്പോൾ എന്റെ ഹൃദയതാളം ഉയരുന്നത് ആദ്യമായി ഞാൻ കേട്ടു. ആത്മവിശ്വാസം വർധിച്ചു.</p>
+        <button id="btn-p2" class="btn btn-check" style="padding:6px 12px;font-size:.78rem;margin-top:6px" onclick="readPara('p2')">🔊 വായിക്കുക</button>
+      </div>
+      <div class="para-block" style="margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed #ecd7e0">
+        <p id="p3"><strong>സെറിബ്രൽ പാൾസി</strong><br>
+        സെറിബ്രൽ പാൾസി എന്ന ക്രൂരൻ എന്നെ കീഴ്‌പ്പെടുത്തി ശാരീരിക ചലനങ്ങളെയെല്ലാം തളർത്തിയപ്പോഴും, ഡോക്ടർമാരുടെ നിർദേശം അവഗണിച്ച് അമ്മയും അച്ഛനും എന്നെ പരിചരിച്ചു. എന്റെ ചിത്രങ്ങൾ ഞാൻ തന്നെ ക്രമപ്പെടുത്തി വയ്ക്കണം.</p>
+        <button id="btn-p3" class="btn btn-check" style="padding:6px 12px;font-size:.78rem;margin-top:6px" onclick="readPara('p3')">🔊 വായിക്കുക</button>
+      </div>
+      <div class="para-block" style="margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed #ecd7e0">
+        <p id="p4"><strong>പെയിന്റിങ് മത്സരം</strong><br>
+        സൺഡേ ഇൻഡിപ്പെൻഡന്റിലെ ഒരു പെയിന്റിങ് മത്സരത്തെക്കുറിച്ചുള്ള അറിയിപ്പ് കണ്ടു. പന്ത്രണ്ടിനും പതിനാറിനും ഇടയിലുള്ള കുട്ടികൾക്കുള്ള മത്സരം. ക്രിസ്റ്റി അതിൽ പങ്കെടുത്ത് അംഗീകാരം നേടി.</p>
+        <button id="btn-p4" class="btn btn-check" style="padding:6px 12px;font-size:.78rem;margin-top:6px" onclick="readPara('p4')">🔊 വായിക്കുക</button>
+      </div>
+      <div class="para-block" style="margin-bottom:8px">
+        <p id="p5"><strong>ജസ്ഫർ</strong><br>
+        മസ്കുലർ അട്രോഫി ബാധിച്ച ജസ്ഫർ കൈകൊണ്ട് എടുക്കേണ്ടവ വായകൊണ്ട് എടുത്തേ പറ്റൂ എന്ന ബോധത്താൽ വരയുടെ രംഗത്ത് സ്വന്തം ശൈലി വികസിപ്പിച്ചു. രാജ്യത്തിനകത്തും പുറത്തും ചിത്രപ്രദർശനങ്ങളിൽ പങ്കെടുത്ത് അംഗീകാരം നേടി.</p>
+        <button id="btn-p5" class="btn btn-check" style="padding:6px 12px;font-size:.78rem;margin-top:6px" onclick="readPara('p5')">🔊 വായിക്കുക</button>
+      </div>
+    </div>
+    <div class="btn-row" style="margin-top:14px">
+      <button class="btn btn-save" onclick="markComplete('read');showToast('വായിച്ചതായി അടയാളപ്പെടുത്തി ✅')">✔ വായിച്ചു</button>
+    </div>
+  </div>
+</div>
+
+<div id="a1" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>ചിത്രവായന</h2></div><div class="card"><div class="readbox">യൂണിറ്റ് മുഖചിത്രം നിരീക്ഷിക്കുക – മരം, ശലഭം, മത്സ്യങ്ങൾ, പക്ഷികൾ.</div><p class="qtext">ചിത്രത്തിൽ നിന്ന് കണ്ടെത്തിയ ആശയങ്ങൾ എഴുതുക. കലയും പ്രകൃതിയും തമ്മിലുള്ള ബന്ധം എന്ത്?</p><textarea id="ta-a1" placeholder="നിങ്ങളുടെ നിരീക്ഷണം..."></textarea><div class="btn-row"><button class="btn btn-save" onclick="saveText('a1','ta-a1')">💾 സേവ്</button><button class="btn btn-hint" onclick="toggleHint('hint-a1')">💡 മോഡൽ</button></div><div id="hint-a1" class="tip" style="display:none;">പ്രകൃതി ഒരു ചിത്രശാലയാണ്. വർണ്ണങ്ങൾ, ജീവജാലങ്ങൾ, കലയുടെ സൗന്ദര്യം – എല്ലാം ഒരുമിച്ച് അരങ്ങൊരുക്കുന്നു.</div><div class="status-msg status-ok" id="st-a1"></div></div></div>
+
+<div id="a2" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>കണ്ടെത്താം പറയാം</h2></div><div class="card"><div class="readbox">ക്രിസ്റ്റി ബ്രൗണിന്റെ ജീവിതത്തിൽ നിന്ന് പ്രധാന സംഭവങ്ങൾ കണ്ടെത്തുക.</div><p class="qtext">1. ക്രിസ്റ്റി ചിത്രം വരച്ചത് ഏത് അവയവം കൊണ്ട്?<br>2. കൂട്ടുകാരിയുടെ പേര്?<br>3. ഏത് അസുഖം ബാധിച്ചു?<br>4. ഏത് മത്സരത്തിൽ പങ്കെടുത്തു?</p><textarea id="ta-a2" placeholder="ഉത്തരങ്ങൾ..."></textarea><div class="btn-row"><button class="btn btn-save" onclick="saveText('a2','ta-a2')">💾 സേവ്</button><button class="btn btn-hint" onclick="toggleHint('hint-a2')">💡 മോഡൽ</button></div><div id="hint-a2" class="tip" style="display:none;">1. ഇടതുകാൽ 2. ഡെലാഹണ്ട് (ഡെല) 3. സെറിബ്രൽ പാൾസി 4. പെയിന്റിങ് മത്സരം (സൺഡേ ഇൻഡിപ്പെൻഡന്റ്)</div><div class="status-msg status-ok" id="st-a2"></div></div></div>
+
+<div id="a3" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>ചർച്ചചെയ്യാം എഴുതാം – ആശയം</h2></div><div class="card"><p class="qtext">ക്രിസ്റ്റി ബ്രൗണിന്റെ ജീവിതം നമുക്ക് നൽകുന്ന സന്ദേശം എന്ത്? ശാരീരിക പരിമിതികൾ എങ്ങനെ അതിജീവിക്കാം?</p><textarea id="ta-a3" placeholder="നിങ്ങളുടെ അഭിപ്രായം..."></textarea><div class="btn-row"><button class="btn btn-save" onclick="saveText('a3','ta-a3')">💾 സേവ്</button><button class="btn btn-hint" onclick="toggleHint('hint-a3')">💡 മോഡൽ</button></div><div id="hint-a3" class="tip" style="display:none;">ശാരീരിക പരിമിതികൾ തടസ്സമല്ല. ഇച്ഛാശക്തി, ആത്മവിശ്വാസം, കുടുംബപിന്തുണ, ചെറിയ പ്രോത്സാഹനങ്ങൾ – ഇവ കൊണ്ട് സ്വപ്നങ്ങൾ യാഥാർഥ്യമാക്കാം.</div><div class="status-msg status-ok" id="st-a3"></div></div></div>
+
+<div id="b1" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>തിയേറ്റർ സ്കെച്ച് തയ്യാറാക്കുക</h2></div><div class="card"><div class="readbox">മസ്കുലർ അട്രോഫി ബാധിച്ച ജസ്ഫർ വായകൊണ്ട് വരച്ച് സ്വന്തം ശൈലി വികസിപ്പിച്ചു.</div><p class="qtext">ജസ്ഫറിന്റെ ജീവിതത്തിൽ നിന്ന് നമുക്ക് ലഭിക്കുന്ന പാഠങ്ങൾ എഴുതുക.</p><textarea id="ta-b1" placeholder="നിങ്ങളുടെ ഉത്തരം..."></textarea><div class="btn-row"><button class="btn btn-save" onclick="saveText('b1','ta-b1')">💾 സേവ്</button><button class="btn btn-hint" onclick="toggleHint('hint-b1')">💡 മോഡൽ</button></div><div id="hint-b1" class="tip" style="display:none;">പരിമിതികളെ അതിജീവിച്ച് കലയിലൂടെ അംഗീകാരം നേടാം. സ്വന്തം ശൈലി വികസിപ്പിക്കുക. സാമൂഹിക പ്രവർത്തനങ്ങളിൽ സജീവമാകുക.</div><div class="status-msg status-ok" id="st-b1"></div></div></div>
+
+<div id="b2" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>നാടക സംഭാഷണം</h2></div><div class="card"><p class="qtext">ജസ്ഫറിനെ അഭിനന്ദിച്ചുകൊണ്ട് ഒരു നാടക സംഭാഷണം തയ്യാറാക്കുക.</p><textarea id="ta-b2" placeholder="വിഷയം: ...&#10;ബഹുമാനപ്പെട്ട ജസ്ഫർ സർ,&#10;..."></textarea><div class="btn-row"><button class="btn btn-save" onclick="saveText('b2','ta-b2')">💾 സേവ്</button><button class="btn btn-hint" onclick="toggleHint('hint-b2')">💡 മോഡൽ</button></div><div id="hint-b2" class="tip" style="display:none;">വിഷയം, അഭിവാദ്യം, അഭിനന്ദനം, അദ്ദേഹത്തിന്റെ കലയെക്കുറിച്ചുള്ള അഭിപ്രായം, അഭ്യർത്ഥന (ഉദാ: സ്കൂളിൽ വരാൻ), നന്ദി, ഒപ്പ്.</div><div class="status-msg status-ok" id="st-b2"></div></div></div>
+
+<div id="c1" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>കവിതയിലെ ഉപമകൾ</h2></div><div class="card"><p class="qtext">പ്രമുഖ ചിത്രകാരനുമായുള്ള അഭിമുഖത്തിന് 6 ചോദ്യങ്ങൾ തയ്യാറാക്കുക.</p><textarea id="ta-c1" placeholder="1. ...&#10;2. ..."></textarea><div class="btn-row"><button class="btn btn-save" onclick="saveText('c1','ta-c1')">💾 സേവ്</button><button class="btn btn-hint" onclick="toggleHint('hint-c1')">💡 മോഡൽ</button></div><div id="hint-c1" class="tip" style="display:none;">ആരംഭം, പ്രചോദനം, ശൈലി, പ്രിയപ്പെട്ട മാധ്യമം, യുവാക്കൾക്ക് ഉപദേശം, ഭാവി പദ്ധതി തുടങ്ങിയവ.</div><div class="status-msg status-ok" id="st-c1"></div></div></div>
+
+<div id="c2" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>കവിത അപഗ്രഥനം</h2></div><div class="card"><p class="qtext">കേരളീയ ചിത്രകലകൾ – ഗുഹാചിത്രങ്ങൾ, രാജാരവിവർമ്മ, ടി.കെ. പത്മിനി, കെ.സി.എസ്. പണിക്കർ തുടങ്ങിയവയെക്കുറിച്ച് ലഘു കുറിപ്പ് തയ്യാറാക്കുക.</p><textarea id="ta-c2" style="min-height:140px" placeholder="നിങ്ങളുടെ കുറിപ്പ്..."></textarea><div class="btn-row"><button class="btn btn-save" onclick="saveText('c2','ta-c2')">💾 സേവ്</button><button class="btn btn-hint" onclick="toggleHint('hint-c2')">💡 മോഡൽ</button></div><div id="hint-c2" class="tip" style="display:none;">ഗുഹാചിത്രങ്ങൾ, അനുഷ്ഠാനചിത്രകല, ചുമർചിത്രകല, ആധുനിക ചിത്രകല, പ്രമുഖ കലാകാരന്മാർ – ഓരോന്നും 2-3 വാക്യം.</div><div class="status-msg status-ok" id="st-c2"></div></div></div>
+
+<div id="c3" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>ലേഖനം</h2></div><div class="card"><p class="qtext">“അതിജീവനം കലകളിലൂടെ” എന്ന വിഷയത്തിൽ ലേഖനം തയ്യാറാക്കുക. (ക്രിസ്റ്റി ബ്രൗൺ, ജസ്ഫർ)</p><textarea id="ta-c3" style="min-height:160px" placeholder="ലേഖനം..."></textarea><div class="btn-row"><button class="btn btn-save" onclick="saveText('c3','ta-c3')">💾 സേവ്</button><button class="btn btn-hint" onclick="toggleHint('hint-c3')">💡 മോഡൽ</button></div><div id="hint-c3" class="tip" style="display:none;">ആമുഖം – ശാരീരിക പരിമിതി. ക്രിസ്റ്റി: സെറിബ്രൽ പാൾസി, ഇടതുകാൽ, മൈ ലെഫ്റ്റ് ഫൂട്ട്. ജസ്ഫർ: മസ്കുലർ അട്രോഫി, വായകൊണ്ട് വര. ഉപസംഹാരം: കല അതിജീവനത്തിന്റെ ശക്തി.</div><div class="status-msg status-ok" id="st-c3"></div></div></div>
+
+<div id="e1" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>മെഗാ ക്വിസ്</h2></div><div class="card" id="e1QuizBox"></div></div>
+<div id="e2" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>ശരി / തെറ്റ്</h2></div><div class="card" id="e2QuizBox"></div></div>
+<div id="e3" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>യോജിപ്പിക്കുക</h2></div><div class="card" id="e3MatchBox"></div></div>
+<div id="e4" class="screen"><div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>മോഡൽ ചോദ്യപേപ്പർ</h2></div><div class="card"><p style="font-size:.8rem;color:#665;">ഉത്തരങ്ങൾ കാണിക്കാൻ/മറയ്ക്കാൻ ബട്ടൺ ഉപയോഗിക്കുക.</p></div><div id="e4qpBox"></div></div>
+<div id="e5" class="screen">
+  <div class="topbar"><button class="icon-btn" onclick="openScreen('home')">⬅</button><h2>യൂണിറ്റ് ടെസ്റ്റ്</h2></div>
+  
+  <!-- PDF & Print buttons with requested layout -->
+  <div class="pdf-btn-row no-print" style="display:flex; justify-content:center; gap:10px; margin: 14px 0;">
+    <button class="btn-pdf" onclick="downloadUnitTestPDF()">⬇️ PDF ആയി ഡൗൺലോഡ്</button>
+    <button class="btn-pdf" style="background:#2f8f7a; box-shadow:0 4px 0 #1b6352;" onclick="window.print()">🖨️ പ്രിന്റ്</button>
+  </div>
+
+  <div class="print-paper" id="unitTestPrintArea">
+    <div class="print-header"><div class="sch">........................................ സ്കൂൾ</div><h3>യൂണിറ്റ് ടെസ്റ്റ് – മലയാളം</h3><div class="sch">യൂണിറ്റ് 4 പാഠം 2: ചിത്രശലഭങ്ങൾ | ക്ലാസ് VII</div></div>
+    <div class="print-meta"><span>സമയം: 40 മിനിറ്റ്</span><span>മൊത്തം മാർക്ക്: 20</span></div>
+    <div class="print-instr">നിർദ്ദേശങ്ങൾ: എല്ലാ ചോദ്യങ്ങൾക്കും ഉത്തരമെഴുതുക.</div>
+    <div class="qsection-title">ഭാഗം A — 1 മാർക്ക് (4 × 1 = 4)</div>
+    <div class="qp-line">1. “മൈ ലെഫ്റ്റ് ഫൂട്ട്” ആരുടെ ആത്മകഥയാണ്?</div>
+    <div class="qp-line">2. ക്രിസ്റ്റി ബ്രൗൺ ചിത്രം വരച്ചത് ഏത് അവയവം കൊണ്ട്?</div>
+    <div class="qp-line">3. ക്രിസ്റ്റിയുടെ കൂട്ടുകാരിയുടെ പേര്?</div>
+    <div class="qp-line">4. ജസ്ഫർ ബാധിക്കപ്പെട്ട രോഗം?</div>
+    <div class="qsection-title">ഭാഗം B — 2 മാർക്ക് (3 × 2 = 6)</div>
+    <div class="qp-line">5. ക്രിസ്റ്റി ബ്രൗണിന്റെ ജീവിതം നൽകുന്ന സന്ദേശം.</div>
+    <div class="qp-line">6. ജസ്ഫർ എങ്ങനെ സ്വന്തം ശൈലി വികസിപ്പിച്ചു?</div>
+    <div class="qp-line">7. ഡെലാഹണ്ടിന്റെ പ്രോത്സാഹനം ക്രിസ്റ്റിക്ക് എന്ത് മാറ്റം വരുത്തി?</div>
+    <div class="qsection-title">ഭാഗം C — 3 മാർക്ക് (2 × 3 = 6)</div>
+    <div class="qp-line">8. ക്രിസ്റ്റി ബ്രൗണിന്റെയും ജസ്ഫറിന്റെയും അതിജീവനം താരതമ്യം ചെയ്യുക.</div>
+    <div class="qp-line">9. “അതിജീവനം കലകളിലൂടെ” – ലഘു ലേഖനം.</div>
+    <div class="qsection-title">ഭാഗം D — 4 മാർക്ക് (1 × 4 = 4)</div>
+    <div class="qp-line">10. ഭിന്നശേഷിക്കാർക്ക് കലയുടെ പ്രാധാന്യം വിശദീകരിക്കുക. സമൂഹത്തിന്റെ പങ്ക് എന്ത്?</div>
+  </div>
+</div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const activityIds=['read','a1','a2','a3','b1','b2','c1','c2','c3','e1','e2','e3','e4','e5'];
+let completed=JSON.parse(localStorage.getItem('u4l2_completed')||'{}');
+let dataStore=JSON.parse(localStorage.getItem('u4l2_data')||'{}');
+
+// Zoom controls logic
+let currentZoom = 1;
+function adjustZoom(step) {
+    currentZoom += step;
+    if (currentZoom < 0.5) currentZoom = 0.5;
+    if (currentZoom > 2.5) currentZoom = 2.5;
+    document.documentElement.style.fontSize = (currentZoom * 100) + '%';
+}
+function resetZoom() {
+    currentZoom = 1;
+    document.documentElement.style.fontSize = '100%';
+}
+
+function openScreen(id){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
+    if(id==='e1'&&!document.getElementById('e1QuizBox').dataset.built)buildE1();
+    if(id==='e2'&&!document.getElementById('e2QuizBox').dataset.built)buildE2();
+    if(id==='e3'&&!document.getElementById('e3MatchBox').dataset.built)buildE3();
+    if(id==='e4'&&!document.getElementById('e4qpBox').dataset.built)buildE4();
+    if(id==='e5')markComplete('e5');
+}
+
+function showToast(msg){
+    const t=document.getElementById('toast');
+    t.textContent=msg;
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),1800);
+}
+
+function markComplete(id){
+    completed[id]=true;
+    localStorage.setItem('u4l2_completed',JSON.stringify(completed));
+    updateHome();
+}
+
+function updateHome(){
+    let count=0;
+    activityIds.forEach(id=>{
+        const el=document.getElementById('chk-'+id);
+        if(el){
+            if(completed[id]){
+                el.textContent='✔';
+                count++;
+            }else el.textContent='';
+        }
+    });
+    document.getElementById('progBar').style.width=(count/activityIds.length*100)+'%';
+    document.getElementById('progText').textContent=count+' / '+activityIds.length+' പ്രവർത്തനങ്ങൾ പൂർത്തിയായി';
+}
+
+function saveText(key,taId){
+    const val=document.getElementById(taId).value.trim();
+    dataStore[key]=val;
+    localStorage.setItem('u4l2_data',JSON.stringify(dataStore));
+    markComplete(key);
+    const st=document.getElementById('st-'+key);
+    if(st)st.textContent=val?'✔ സേവ് ചെയ്തു!':'സേവ് ചെയ്തു.';
+    showToast('സേവ് ചെയ്തു ✅');
+}
+
+function toggleHint(id){
+    const el=document.getElementById(id);
+    el.style.display=el.style.display==='none'?'block':'none';
+}
+
+/* ========== Audio System & Text to Speech ========== */
+
+// ഇൻ്റർനെറ്റ് ഇല്ലാതെ ശബ്ദം കേൾക്കാൻ പാഠഭാഗങ്ങളുടെ MP3 Base64 കോഡ് ഇവിടെ ചേർക്കുക. 
+// (AI ആയതിനാൽ പുതിയ ഫയലുകൾക്കുള്ള വലിയ Base64 കോഡുകൾ എനിക്ക് നേരിട്ട് നിർമ്മിക്കാൻ കഴിയില്ല. 
+// എന്നാൽ സിസ്റ്റത്തിലെ മലയാളം വോയിസ് ഉപയോഗിച്ച് വായിക്കാനുള്ള Web Speech API ഇതിൽ സജ്ജീകരിച്ചിട്ടുണ്ട്)
+window.AUDIO_MAP = window.AUDIO_MAP || {
+    // ഉദാഹരണത്തിന്: "ക്രിസ്റ്റി ബ്രൗണിന്റെ ആത്മകഥ...": "data:audio/mpeg;base64,...",
+};
+
+let currentAudio = null;
+
+function playAudioText(text, btnId) {
+    stopReadAloud();
+    let cleanText = text.trim();
+    
+    // Offline Base64 ഉണ്ടെങ്കിൽ അത് പ്ലേ ചെയ്യുക
+    if (window.AUDIO_MAP && window.AUDIO_MAP[cleanText]) {
+        currentAudio = new Audio(window.AUDIO_MAP[cleanText]);
+        currentAudio.play();
+        if(btnId) {
+            let btn = document.getElementById(btnId);
+            if(btn) btn.textContent = '⏸ നിർത്തുക';
+        }
+        currentAudio.onended = () => { 
+            if(btnId) {
+                let btn = document.getElementById(btnId);
+                if(btn) btn.textContent = btnId === 'btnReadAloud' ? '🔊 മുഴുവൻ വായിക്കുക' : '🔊 വായിക്കുക';
+            }
+        };
+    } else {
+        // Base64 ഇല്ലെങ്കിൽ നല്ല മലയാളം ശൈലിയിൽ Speech Synthesis ഉപയോഗിക്കുക (Speed 0.7)
+        const u = new SpeechSynthesisUtterance(cleanText);
+        u.lang = 'ml-IN'; 
+        u.rate = 0.7; // സ്പീഡ് കുറച്ചു
+        if(btnId) {
+            let btn = document.getElementById(btnId);
+            if(btn) btn.textContent = '⏸ നിർത്തുക';
+        }
+        u.onend = () => { 
+            if(btnId) {
+                let btn = document.getElementById(btnId);
+                if(btn) btn.textContent = btnId === 'btnReadAloud' ? '🔊 മുഴുവൻ വായിക്കുക' : '🔊 വായിക്കുക';
+            }
+        };
+        window.speechSynthesis.speak(u);
+    }
+}
+
+function toggleReadAloud(){
+    const btn = document.getElementById('btnReadAloud');
+    if (window.speechSynthesis.speaking || (currentAudio && !currentAudio.paused)){
+        stopReadAloud();
+    } else {
+        const textEl = document.getElementById('lessonText');
+        playAudioText(textEl.innerText, 'btnReadAloud');
+    }
+}
+
+function stopReadAloud(){
+    if(currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+    }
+    window.speechSynthesis.cancel();
+    
+    const mainBtn = document.getElementById('btnReadAloud');
+    if(mainBtn) mainBtn.textContent = '🔊 മുഴുവൻ വായിക്കുക';
+    
+    document.querySelectorAll('.btn-check').forEach(btn => {
+        if(btn.id !== 'btnReadAloud' && btn.textContent.includes('നിർത്തുക')) {
+            btn.textContent = '🔊 വായിക്കുക';
+        }
+    });
+}
+
+function readPara(id){
+    stopReadAloud();
+    const el = document.getElementById(id);
+    if (!el) return;
+    const btnId = 'btn-' + id;
+    playAudioText(el.innerText, btnId);
+}
+
+let quizRegistry={};
+function buildQuiz(containerId,questions,onFinishKey){const box=document.getElementById(containerId);box.dataset.built='1';let idx=0,score=0;function render(){if(idx>=questions.length){box.innerHTML='<div class="score-box"><div class="big">'+score+' / '+questions.length+'</div><p>ക്വിസ് പൂർത്തിയായി! 🎉</p><div class="btn-row" style="justify-content:center"><button class="btn btn-check" onclick="restartQuiz(\''+containerId+'\')">🔁 വീണ്ടും</button></div></div>';if(onFinishKey)markComplete(onFinishKey);return;}const q=questions[idx];let html='<div class="quiz-progress">ചോദ്യം '+(idx+1)+' / '+questions.length+'</div><p class="qtext">'+q.q+'</p>';q.opts.forEach((o,i)=>{html+='<button class="quiz-opt" onclick="answerQuiz(\''+containerId+'\','+i+')">'+o+'</button>';});html+='<div class="explain" id="'+containerId+'-explain">'+q.exp+'</div>';box.innerHTML=html;box._answered=false;}render();box.answer=function(choice){if(box._answered)return;box._answered=true;const q=questions[idx];const btns=box.querySelectorAll('.quiz-opt');btns.forEach((b,i)=>{b.classList.add('disabled');if(i===q.correct)b.classList.add('correct');else if(i===choice)b.classList.add('wrong');});if(choice===q.correct)score++;document.getElementById(containerId+'-explain').classList.add('show');const nextBtn=document.createElement('button');nextBtn.className='btn btn-check';nextBtn.style.marginTop='10px';nextBtn.textContent=(idx+1<questions.length)?'അടുത്തത് ➡':'ഫലം കാണുക 🏁';nextBtn.onclick=function(){idx++;render();};box.appendChild(nextBtn);};quizRegistry[containerId]=box;}
+function answerQuiz(containerId,choice){quizRegistry[containerId].answer(choice);}
+window.restartQuiz=function(containerId){const box=document.getElementById(containerId);box.dataset.built='';box.innerHTML='';const map={e1QuizBox:buildE1,e2QuizBox:buildE2};if(map[containerId])map[containerId]();};
+
+function buildE1(){buildQuiz('e1QuizBox',[
+{q:'“മൈ ലെഫ്റ്റ് ഫൂട്ട്” ആരുടെ ജീവിതകഥയാണ്?',opts:['ജസ്ഫർ','ക്രിസ്റ്റി ബ്രൗൺ','ആർട്ടിസ്റ്റ് നമ്പൂതിരി','എസ്. ജോസഫ്'],correct:1,exp:'ക്രിസ്റ്റി ബ്രൗൺ.'},
+{q:'ക്രിസ്റ്റി ബ്രൗൺ ചിത്രം വരച്ചത് ഏത് അവയവം കൊണ്ട്?',opts:['വലതുകൈ','ഇടതുകാൽ','വായ','വലതുകാൽ'],correct:1,exp:'ഇടതുകാൽ.'},
+{q:'ക്രിസ്റ്റിയുടെ കൂട്ടുകാരിയുടെ പേര്?',opts:['സിൻഡ്രല','ഡെലാഹണ്ട്','മേരി','ജെയ്ൻ'],correct:1,exp:'ഡെലാഹണ്ട്.'},
+{q:'ക്രിസ്റ്റി ബ്രൗൺ ബാധിക്കപ്പെട്ട അസുഖം?',opts:['മസ്കുലർ അട്രോഫി','സെറിബ്രൽ പാൾസി','പോളിയോ','അസ്ത്മ'],correct:1,exp:'സെറിബ്രൽ പാൾസി.'},
+{q:'ജസ്ഫർ ഏത് രോഗത്തിന്റെ ബുദ്ധിമുട്ട് അനുഭവിച്ചു?',opts:['പോളിയോ','മസ്കുലർ അട്രോഫി','സെറിബ്രൽ പാൾസി','ഹൃദ്രോഗം'],correct:1,exp:'മസ്കുലർ അട്രോഫി.'},
+{q:'ജസ്ഫർ ചിത്രം വരച്ചത് എങ്ങനെ?',opts:['കൈകൊണ്ട്','വായകൊണ്ട്','കാൽകൊണ്ട്','കണ്ണുകൊണ്ട്'],correct:1,exp:'വായകൊണ്ട്.'},
+{q:'ക്രിസ്റ്റിയുടെ ആത്മവിശ്വാസം വർധിപ്പിച്ചത് ആര്?',opts:['ഡോക്ടർ','ഡെലാഹണ്ട്','അധ്യാപകൻ','സഹോദരൻ'],correct:1,exp:'ഡെലാഹണ്ട്.'},
+{q:'“മൈ ലെഫ്റ്റ് ഫൂട്ട്” മലയാളത്തിൽ എഴുതിയ കൃതിയാണോ?',opts:['അതെ','അല്ല – സ്വതന്ത്രവിവർത്തനം'],correct:1,exp:'സ്വതന്ത്രവിവർത്തനം.'}
+],'e1');}
+
+function buildE2(){buildQuiz('e2QuizBox',[
+{q:'ക്രിസ്റ്റി ബ്രൗൺ വലതുകാൽ കൊണ്ടാണ് ചിത്രം വരച്ചത്. (ശരി/തെറ്റ്)',opts:['ശരി','തെറ്റ്'],correct:1,exp:'തെറ്റ് – ഇടതുകാൽ.'},
+{q:'ജസ്ഫർ വായകൊണ്ടാണ് ചിത്രം വരയ്ക്കുന്നത്. (ശരി/തെറ്റ്)',opts:['ശരി','തെറ്റ്'],correct:0,exp:'ശരി.'},
+{q:'സെറിബ്രൽ പാൾസി ക്രിസ്റ്റിയെ ബാധിച്ചു. (ശരി/തെറ്റ്)',opts:['ശരി','തെറ്റ്'],correct:0,exp:'ശരി.'},
+{q:'ഡെലാഹണ്ട് ക്രിസ്റ്റിയുടെ ഡോക്ടറായിരുന്നു. (ശരി/തെറ്റ്)',opts:['ശരി','തെറ്റ്'],correct:1,exp:'തെറ്റ് – കൂട്ടുകാരി.'},
+{q:'ശാരീരിക പരിമിതികൾ കലയ്ക്ക് തടസ്സമല്ല. (ശരി/തെറ്റ്)',opts:['ശരി','തെറ്റ്'],correct:0,exp:'ശരി.'}
+],'e2');}
+
+function buildE3(){const box=document.getElementById('e3MatchBox');box.dataset.built='1';const pairs=[['മൈ ലെഫ്റ്റ് ഫൂട്ട്','ക്രിസ്റ്റി ബ്രൗൺ'],['സെറിബ്രൽ പാൾസി','ക്രിസ്റ്റി ബ്രൗൺ'],['മസ്കുലർ അട്രോഫി','ജസ്ഫർ'],['ഡെലാഹണ്ട്','കൂട്ടുകാരി'],['ഇടതുകാൽ','ചിത്രം വരയ്ക്കൽ'],['വായകൊണ്ട് വര','ജസ്ഫർ']];let left=pairs.map((p,i)=>({txt:p[0],id:i})).sort(()=>Math.random()-.5);let right=pairs.map((p,i)=>({txt:p[1],id:i})).sort(()=>Math.random()-.5);let selL=null,matchedCount=0;box.innerHTML='<p style="font-size:.83rem;color:#665;margin-bottom:10px;">ഇടതുവശവും വലതുവശവും ജോടിയാക്കുക.</p><div class="match-wrap"><div class="match-col" id="e3left"></div><div class="match-col" id="e3right"></div></div><div class="status-msg status-ok" id="e3status"></div>';const leftCol=document.getElementById('e3left'),rightCol=document.getElementById('e3right');left.forEach(item=>{const b=document.createElement('div');b.className='match-item';b.textContent=item.txt;b.dataset.id=item.id;b.onclick=()=>{if(b.classList.contains('done'))return;document.querySelectorAll('#e3left .match-item').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');selL=item.id;};leftCol.appendChild(b);});right.forEach(item=>{const b=document.createElement('div');b.className='match-item';b.textContent=item.txt;b.dataset.id=item.id;b.onclick=()=>{if(b.classList.contains('done')||selL===null)return;if(selL===item.id){b.classList.add('done');document.querySelector('#e3left .match-item.sel').classList.add('done');document.querySelector('#e3left .match-item.sel').classList.remove('sel');matchedCount++;selL=null;if(matchedCount===pairs.length){document.getElementById('e3status').textContent='🎉 എല്ലാം ശരിയായി ജോടിയാക്കി!';markComplete('e3');}}else{b.style.background='#fbdada';b.style.borderColor='#c0463f';setTimeout(()=>{b.style.background='';b.style.borderColor='';},500);}};rightCol.appendChild(b);});}
+
+function buildE4(){const box=document.getElementById('e4qpBox');box.dataset.built='1';const qs=[{q:'“മൈ ലെഫ്റ്റ് ഫൂട്ട്” ആരുടെ ആത്മകഥാ ഭാഗമാണ്?',marks:'1',a:'ക്രിസ്റ്റി ബ്രൗണിന്റെ (സ്വതന്ത്രവിവർത്തനം).'},{q:'ക്രിസ്റ്റി ബ്രൗൺ ചിത്രം വരച്ചത് ഏത് അവയവം കൊണ്ട്?',marks:'1',a:'ഇടതുകാൽ.'},{q:'ജസ്ഫർ എങ്ങനെ ചിത്രം വരച്ചു?',marks:'2',a:'മസ്കുലർ അട്രോഫി ബാധിച്ചതിനാൽ കൈകൊണ്ട് എടുക്കേണ്ടവ വായകൊണ്ട് എടുത്ത് വരയുടെ രംഗത്ത് സ്വന്തം ശൈലി വികസിപ്പിച്ചു.'},{q:'ക്രിസ്റ്റി ബ്രൗണിന്റെ ജീവിതം നൽകുന്ന സന്ദേശം.',marks:'2',a:'ശാരീരിക പരിമിതികൾ തടസ്സമല്ല. ഇച്ഛാശക്തിയും ആത്മവിശ്വാസവും കൊണ്ട് സ്വപ്നങ്ങൾ യാഥാർഥ്യമാക്കാം.'},{q:'ക്രിസ്റ്റിയുടെയും ജസ്ഫറിന്റെയും അതിജീവനം താരതമ്യം ചെയ്യുക.',marks:'3',a:'രണ്ടുപേരും ശാരീരിക പരിമിതി അതിജീവിച്ച് കലയിലൂടെ അംഗീകാരം നേടി. ക്രിസ്റ്റി – സെറിബ്രൽ പാൾസി, ഇടതുകാൽ. ജസ്ഫർ – മസ്കുലർ അട്രോഫി, വായ. ഇരുവരും സ്വന്തം ശൈലി വികസിപ്പിച്ചു.'},{q:'“അതിജീവനം കലകളിലൂടെ” – ലഘു ലേഖനം.',marks:'4',a:'ശാരീരിക പരിമിതികളെ അതിജീവിച്ച് കലയിലൂടെ ജീവിതം അർഥപൂർണ്ണമാക്കിയവരാണ് ക്രിസ്റ്റി ബ്രൗണും ജസ്ഫറും. കല ഒരു ആശയവിനിമയ മാർഗം മാത്രമല്ല, അതിജീവനത്തിനുള്ള ശക്തിയുമാണ്.'}];let html='';qs.forEach((item,i)=>{html+='<div class="qp-item"><div class="qp-q"><span class="qp-q-text">'+(i+1)+'. '+item.q+'</span><span class="marks-badge">'+item.marks+' മാർക്ക്</span></div><div class="ans-box" id="e4ans'+i+'">'+item.a+'</div></div>';});html+='<div style="text-align:center;margin:15px 0;"><button class="btn-toggle" id="e4-main-toggle" onclick="toggleAllAnswers()">👁️ ഉത്തരങ്ങൾ കാണിക്കുക</button></div>';box.innerHTML=html;markComplete('e4');}
+
+window.toggleAllAnswers=function(){const ansBoxes=document.querySelectorAll('#e4qpBox .ans-box');const btn=document.getElementById('e4-main-toggle');let isHidden=!ansBoxes[0].classList.contains('show');ansBoxes.forEach(box=>{if(isHidden)box.classList.add('show');else box.classList.remove('show');});btn.textContent=isHidden?'🙈 ഉത്തരങ്ങൾ മറയ്ക്കുക':'👁️ ഉത്തരങ്ങൾ കാണിക്കുക';};
+
+// PDF Download with 1cm margin (10mm) and high quality Malayalam rendering.
+function downloadUnitTestPDF(){
+    const element = document.getElementById('unitTestPrintArea');
+    const opt = {
+        margin: 10,  // 1 cm margin on all sides
+        filename: 'Unit4_L2_Chithrashalabhangal_Test.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+    showToast('PDF തയ്യാറാക്കുന്നു...');
+    html2pdf().set(opt).from(element).save();
+}
+
+updateHome();
+</script>
+</body>
+</html>
